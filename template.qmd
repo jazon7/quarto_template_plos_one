@@ -1,0 +1,148 @@
+---
+execute: 
+  echo: false
+  output: true
+  warning: false
+format:
+  html:
+    theme: litera
+    toc: true
+    toc-location: left
+    number-sections: false
+    number-depth: 4
+    highlight-style: espresso
+    embed-resources: true
+  docx: 
+    toc: false
+    reference-doc: "./docx/plos_one_theme.docx"
+editor: visual
+bibliography: "./bib/bibliography.bib"
+link-citations: true
+csl: "./csl/plos-one.csl"
+---
+
+```{r, include=FALSE}
+#install packages helpful for hearing/audiology research 
+if (!require(pacman)) install.packages('pacman')
+pacman::p_load(tidyverse, patchwork, ggsci, ggpubr, reticulate)
+```
+
+```{r}
+#load scripts 
+source("scripts/scripts.R")
+```
+
+# **The title of the article (sentence case)**
+
+**author one^1,4,⁎,¶^ , author two^2,¶^ , author three^3^**
+
+^1^ Department, Institution, City, State, Country (no Zip code, abbreviations, and positon titles)
+
+^2^ Department, Institution, City, State, Country (no Zip code, abbreviations, and positon titles)
+
+^3^ Department, Institution, City, State, Country (no Zip code, abbreviations, and positon titles)
+
+^4^ Department, Institution, City, State, Country (no Zip code, abbreviations, and positon titles)
+
+^⁎^Corresponding author
+
+Email: name\@domain.com (author name)
+
+^¶^These authors contributed equally to this work.
+
+# Abstract (Heading 1, sentence case)
+
+Text
+
+Text
+
+Text
+
+# Introduction
+
+Text
+
+Text
+
+Example citation: A meta-analysis of studies surveying scientists about misconduct showed that \~2% of scientists admitted to having fabricated, falsified or modified data or results at least once, and up to \~34% admitted other questionable research practices [@fanelliHowManyScientists2009].
+
+# Materials and Methods
+
+Text
+
+## Subsection (Heading 2, sentence case)
+
+Text
+
+### Subsection (Heading 3, sentence case)
+
+Text
+
+# Results
+
+Cite figures as "Fig 1", "Fig 2", etc. in order.
+
+Each figure caption should appear directly after the paragraph in which they are first cited.
+
+Figure files should be saved as 'Fig1.tif', 'Fig1.tiff', or 'Fig1.eps' and uploaded separately as individual files.
+
+```{r}
+#when saving plots for publication, use the save_figure() function from the /scripts/scripts.R file. 
+#the save_figure() function will save plots as .tiff format in the /figures folder
+#example use: save_figure(plot = fig1, file_name = "Fig1")
+```
+
+**Fig 1. This is the Fig 1 Title.** Figure caption text here.
+
+\[PLOS ONE guidelines for figures can be found [here](http://journals.plos.org/plosone/s/figures).\]
+
+**Fig 2. This is the Fig 2 Title.** Figure caption text here.
+
+**Table 1. This is the Table 1 Title.**
+
+\[*Table goes here*\]
+
+This is the Table 1 legend.
+
+^a^Table footnotes belong here.
+
+^b^Footnotes should have corresponding symbols in the table.
+
+# Discussion
+
+# Conclusions
+
+# Acknowledgments
+
+\[Acknowledgments go here\]
+
+\newpage
+
+# References
+
+::: {#refs}
+:::
+
+\newpage
+
+# Supporting information
+
+::: supp
+**S1 Fig. This is the S1 Fig Title.** This is the S1 Fig description.
+:::
+
+::: supp
+**S2 Fig. This is the S2 Fig Title.** This is the S2 Fig description.
+:::
+
+::: supp
+**S1 File. This is the S1 File Title.** This is the S1 File description.
+:::
+
+::: supp
+**S1 Video. This is the S1 Video Title.** This is the S1 Video description.
+:::
+
+::: supp
+**S1 Table. This is the S1 Table Title.** This is the S1 Table description.
+:::
